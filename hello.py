@@ -6,6 +6,7 @@ print ("libraries are imported successfully!")
 data = pd.Series([1, 3, 5, np.nan, 6, 8])
 print(data)
 print("hi there")
+print("Hello sysc2010")
 
 #this will be for the task on hand section:Q1
 
@@ -50,7 +51,7 @@ time = np.arange(0, num_samples * 60, 60)
 
 temperature = 36 + np.random.uniform(-0.5, 0.5, num_samples)
 
-# Create DataFrame
+# Create Data/names
 data = {
     "Time (s)": time,
     "Temperature (°C)": temperature

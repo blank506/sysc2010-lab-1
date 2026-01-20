@@ -1,0 +1,60 @@
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+# Load dataset
+df = pd.read_csv("env_temp_humidity_clean.csv")
+
+
+print("\n""First five row:")
+print(df.head(), "\n")
+
+# Display column names
+print("Column names:")
+print(df.columns, "\n")
+
+# Display data types
+print("Data types:")
+print(df.dtypes, "\n")
+
+
+df["timestamp"] = pd.to_datetime(df["timestamp"])
+
+print("Timestamp conversion check:")
+print(df.head(), "\n")
+
+#probalbly missing values in the columns 
+print("Missing values per column:")
+print(df.isna().sum(), "\n")
+
+# Summary statistics to identify outliers
+print("Summary statistics:")
+print(df.describe(), "\n")
+
+#now to the ploting the TEMP and the HUMID
+
+# Temperature vs Time
+plt.figure()
+plt.plot(df["timestamp"], df["temperature_C"])
+plt.xlabel("Time (s)")
+plt.ylabel("Temperature (°C)")
+plt.title("Temperature vs Time")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("temperature_vs_time.png")
+plt.show()
+
+# Humidity vs Time
+plt.figure()
+plt.plot(df["timestamp"], df["humidity_pct"])
+plt.xlabel("Time (s)")
+plt.ylabel("Humidity (%)")
+plt.title("Humidity vs Time")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig("humidity_vs_time.png")
+plt.show()
+
+print("Plots saved as image files.")
