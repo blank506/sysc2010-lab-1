@@ -1,1 +1,10 @@
-Hello World!
+    """
+    in this file i will write down any findings about the CSV file, or anything in the code.
+    
+    *to start of with in section 6,task 4(6.4)
+    *when reading the CSV file using code and trying to find out the outliers and missing values:
+    *for missing values: we didnt see any missing values for the CSV erverything is found in the CSV,
+    *for the outliers: by using the .isna, we can grab the MAX value and the MIN value and verify that the number/values 
+    in the CSV are in bounds of the MAX and MIN.
+
+    """
